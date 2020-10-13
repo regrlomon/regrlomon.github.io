@@ -22,3 +22,4 @@ first-network目录中有一个配置文件crypto-config.yaml，这个配置文�
 4个perr节点：peer0.org1.example.com， peer1.org1.example.com， peer0.org2.example.com， peer1.org2.example.com
 这里可以使用cryptogen命令，生成这个区块链网络所需要的一系列证书及相关文件。证书是基于PKI体系的x509格式证书。
 在执行前请确认当前hgsfjhhjk
+gedrggdr
