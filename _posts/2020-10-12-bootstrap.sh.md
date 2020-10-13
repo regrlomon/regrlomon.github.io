@@ -5,7 +5,7 @@ tag: hyperledger fabric
 在运行bootstrap.sh安装fabric samples和相关环境时，由于网络问题，很多下了一半就突然停止下载了，结果又要重新安装，所以分析一下这个脚本有哪些功能，帮我们做了哪几件事情。
 <!--more-->
 ## bootstrap.sh的使用
-我的配置环境是:Ubuntu 20.04、docker、go
+我的配置环境是:Ubuntu 20.04、docker、go1.15.2  
 现在fabric的最新版本是2.2.1，fabric-ca的版本是1.4.9，但是最新版本资料较少，而且有bug，这里选择安装1.1.0版本。在命令行输入`./bootstrap.sh 1.1.0 1.1.0`则安装的是1.1.0版本的fabric和fabric-ca；如果输入`./bootstrap.sh`，则默认安装的是最新版的fabric和fabric-ca；如果输入`./bootstrap.sh 1.1.0`，则安装的是1.1.0的fabric和1.4.9的fabric-ca，我一开始是这样输入的，但是找不到1.4.9版本的fabric-ca的docker镜像，安装会报错，我去docker hub上看了一下，没有ubuntu环境的1.4.9版本的fabric-ca镜像，所以选择安装了1.1.0版本的fabric-ca。
 
 ## bootstrap.sh安装的部分
