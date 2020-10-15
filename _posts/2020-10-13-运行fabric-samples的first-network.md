@@ -28,10 +28,8 @@ first-network目录中有一个配置文件crypto-config.yaml，这个配置文�
 ```
 cryptogen generate --config=./crypto-config.yaml
 ```
-><font color=green>执行成功后，会在当前目录下增加一个新目录 crypto-config，包含有这个网络节点的证书、私钥等加密、签名相关元素，使用tree命令即可查看该文件目录.在这个网络中，有一个CA，即证书颁发机构，名称为example.com，它给自己颁发了一个自签名根</font>
-证书ca.example.com-cert.pem，在生成的多个目录中都包含了这个 CA 根证书，而其他节点证书
-（除了 TLS 证书）都由此 CA 颁发。
-进入其中一个目录`crypto-config/ordererOrganizations/example.com/ca`发现有两个文件,其中ca.example.com-cert.pem 是 CA 自签名根证书
+> 执行成功后，会在当前目录下增加一个新目录 crypto-config，包含有这个网络节点的证书、私钥等加密、签名相关元素，使用tree命令即可查看该文件目录.在这个网络中，有一个CA，即证书颁发机构，名称为example.com，它给自己颁发了一个自签名根证书ca.example.com-cert.pem，在生成的多个目录中都包含了这个 CA 根证书，而其他节点证书（除了 TLS 证书）都由此 CA 颁发。进入其中一个目录`crypto-config/ordererOrganizations/example.com/ca`发现有两个文
+件,其中ca.example.com-cert.pem 是 CA 自签名根证书
 7357b1a60b074fedafe077b5881d5340f887bde90c4aacc1a42dccd5002a14f9_sk是根证书对应
 的私钥文件
 显示CA根证书内容

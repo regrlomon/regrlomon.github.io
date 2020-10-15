@@ -137,6 +137,7 @@ printHelp() {
 ## 安装过程出现的问题
 1、下载fabric和fabric-ca二进制文件时因为网络原因压根下载不了、下载一半提示错误，这个时候可以去`https://github.com/hyperledger/fabric/releases`下载你需要的版本，然后解压到samples文件夹内。  
 2、docker下载镜像很慢，这里可以切换到国内源，修改或者创建`/etc/docker/daemon.json`文件，修改成如下形式：
+
 ```
 {
     "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
