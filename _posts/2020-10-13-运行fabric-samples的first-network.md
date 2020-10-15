@@ -24,12 +24,11 @@ first-network目录中有一个配置文件crypto-config.yaml，这个配置文�
 这里可以使用cryptogen命令，生成这个区块链网络所需要的一系列证书及相关文件。证书是基于PKI体系的x509格式证书。
 执行前请先确认当前目录下没有 crypto-config 目录，如果已经存在，请先删除
 生成证书
+
 ```
 cryptogen generate --config=./crypto-config.yaml
 ```
-执行成功后，会在当前目录下增加一个新目录 crypto-config，包含有这个网络节点的证书、私钥等
-加密、签名相关元素，使用tree命令即可查看该文件目录
-在这个网络中，有一个CA，即证书颁发机构，名称为example.com，它给自己颁发了一个自签名根
+><font color=green>执行成功后，会在当前目录下增加一个新目录 crypto-config，包含有这个网络节点的证书、私钥等加密、签名相关元素，使用tree命令即可查看该文件目录.在这个网络中，有一个CA，即证书颁发机构，名称为example.com，它给自己颁发了一个自签名根</font>
 证书ca.example.com-cert.pem，在生成的多个目录中都包含了这个 CA 根证书，而其他节点证书
 （除了 TLS 证书）都由此 CA 颁发。
 进入其中一个目录`crypto-config/ordererOrganizations/example.com/ca`发现有两个文件,其中ca.example.com-cert.pem 是 CA 自签名根证书
