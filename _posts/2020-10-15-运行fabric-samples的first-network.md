@@ -16,17 +16,17 @@ tag: hyperledger fabric
 停止first-network，删除所有docker容器、证书、创世区块和三个配置交易，删除由byfn.sh up生成的链码镜像
 ```
 执行./byfn.sh up  
-![start](https://i.loli.net/2020/10/15/Ajho7St1UniaXBl.png)
+![start](https://i.loli.net/2020/10/15/Ajho7St1UniaXBl.png){:.rounded}  
 >启动了6个docker容器，其中orderer是fabric的排序节点，cli是客户端节点，剩下四个是peer节点然后程序执行，直到出现
 
-![end](https://i.loli.net/2020/10/15/eLqXzRn9GvYF2Ef.png)  
+![end](https://i.loli.net/2020/10/15/eLqXzRn9GvYF2Ef.png){:.rounded}  
 >这样整个first-network就结束了，通过输入`docker ps`可以查看正在运行的docker容器
 
-![docker ps](https://i.loli.net/2020/10/15/5uLlpxKFDkZ369b.png)
+![docker ps](https://i.loli.net/2020/10/15/5uLlpxKFDkZ369b.png){:.rounded}  
 >最下面的6个是上面说的，最上面的3个是在三个peer节点上实例的链码  
 使用`docker exec -it cli bash`进入cli客户端，在客户端输入`peer chaincode query -C mychannel -n mycc -c '{"Args":["query","a"]}'`即可查询a账户的余额
 
-![peer query](https://i.loli.net/2020/10/15/eCYtXFSm3lxhyPc.png)
+![peer query](https://i.loli.net/2020/10/15/eCYtXFSm3lxhyPc.png){:.rounded}  
 >以上就是使用自动化工具执行first-network，但是执行完了啥也没学到，因为在执行过程终端输出了一大堆都不知道啥意思，能看懂的就是最开始的start跟最后的end以及a账户的余额为90，所以有必要学习一下怎么手动执行这个first-network
 
 ## 手动运行first-network
@@ -54,14 +54,13 @@ cryptogen generate --config=./crypto-config.yaml
 注意：执行命令前要检查当前目录是否存在 crypto-config 目录，如果存在，请先删除。  
 这个`crypto-config.yaml`以后会经常使用，它定义了这个网络中有一个orderer组织，该组织的域名是example.com，还定义了两个peer组织，域名分别是org1.example.com，org2.example.com，其中每个peer组织都有两个peer节点和一个用户。  
 执行成功后，会在当前目录下增加一个新目录 crypto-config，包含有这个网络节点的证书、私钥等加密、签名相关元素，使用tree命令即可查看该文件目录
-![crypto-config.yaml](https://i.loli.net/2020/10/16/FsgdjzWthqiJaQu.png)
-
+![crypto-config.yaml](https://i.loli.net/2020/10/16/FsgdjzWthqiJaQu.png){:.rounded}  
 这个图太大了。在这个网络中，有一个ca，在它的目录下有一个证书文件`ca.example.com-cert.pem`，输入
 ```
 openssl x509 -in ca.example.com-cert.pem -text
 ```
 即可查看到该证书的内容
-![ca.example.com-cert.pem](https://i.loli.net/2020/10/15/HEi9OwSrDfQWcj1.png)  
+![ca.example.com-cert.pem](https://i.loli.net/2020/10/15/HEi9OwSrDfQWcj1.png){:.rounded}  
 其中第六行显示使用的是sha256的加密算法
 ### 生成创世区块Genesis Block
 ```
