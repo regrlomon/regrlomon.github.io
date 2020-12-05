@@ -3,11 +3,10 @@ title: go编写chaincode用到的函数
 author: S1rumAA
 tag: ["go", "hyperledger fabric"]
 ---
-## 写在前面
+### 写在前面
 fabric的最新版本是2.2，现在从github上git下来的fabric里面找不到shim和peer这两个包了  
 解决办法就是从`https://github.com/hyperledger/fabric/releases`上面下载1.4及以前版本就能找到shim和peer包
-## 链码结构
-
+### 链码结构
 ```
 package main
 
