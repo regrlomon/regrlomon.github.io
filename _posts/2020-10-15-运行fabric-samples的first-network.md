@@ -3,6 +3,7 @@ title: 运行fabric-samples的first-network
 tag: hyperledger fabric
 ---
 首先说一下我的配置环境：Ubuntu20.04、go、docker、docker-compose、fabric1.1、fabric-ca1.1。
+<!--more-->
 ## 使用自动化工具运行first-network
 >cd fabric/fabric-samples/first-network
 
