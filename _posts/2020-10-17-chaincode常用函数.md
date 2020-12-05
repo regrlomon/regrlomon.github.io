@@ -76,6 +76,9 @@ CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/c
 peer chaincode install -n mycc -v 1.0 -p github.com/chaincode/fabcar/go
 
 ```
+
+
+
 peer chaincode instantiate -o orderer.example.com:7050 --tls -C $CHANNEL_NAME -n mygo -v 1.0 -c '{"Args":["init"]}' -P "OR ('Org1MSP.peer','Org2MSP.peer')"  --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
 export CHANNEL_NAME=mychannel
